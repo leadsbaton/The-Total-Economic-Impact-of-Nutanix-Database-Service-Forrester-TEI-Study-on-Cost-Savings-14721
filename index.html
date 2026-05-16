@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Modernize Hadoop for AI Without Ripping and
+    Replacing Your Existing Infrastructure</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ✅ MEDIA QUERY FIX -->
+  <style>
+    /* Default */
+    .mobile-heading {
+      display: none;
+    }
+
+    /* Mobile only */
+    @media (max-width: 767px) {
+      .mobile-heading {
+        display: block;
+        margin-bottom: 1.5rem;
+      }
+
+      .desktop-heading {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-white font-sans">
+
+  <!-- Navbar -->
+  <div id="navbar"></div>
+
+  <div class="max-w-4xl mx-auto mt-10 px-6">
+
+    <!-- ✅ MOBILE HEADING (TOP ONLY ON MOBILE) -->
+    <h1 class="mobile-heading text-3xl font-semibold leading-snug">
+      Modernize Hadoop for AI Without Ripping and
+      Replacing Your Existing Infrastructure
+    </h1>
+
+    <!-- TOP ROW (MATCHING SCREENSHOT LAYOUT) -->
+    <div class="flex flex-col md:flex-row gap-10 md:items-center items-start">
+      <!-- Left: Image and Button -->
+      <div class="md:w-1/4 flex flex-col items-center">
+        <img src="assets/images/image99a.png" alt="logo" class="h-40 object-contain border border-gray-300 mb-4">
+        <button id="getEbookBtn" class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 font-semibold w-full">Download
+          PDF</button>
+      </div>
+      <!-- Right: Heading and Single Paragraph -->
+      <div class="md:w-3/4">
+        <!-- ✅ DESKTOP HEADING -->
+        <h1 class=" desktop-heading text-3xl font-semibold leading-snug mb-4 text-left">Modernize Hadoop for AI Without
+          Ripping and
+          Replacing Your Existing Infrastructure</h1>
+        <p class="text-gray-800 mb-4 text-left">Legacy Hadoop environments are draining budgets and blocking AI
+          initiatives — but the conventional wisdom that modernization requires a
+          multi-year, full-stack migration is wrong. Learn how a new approach
+          layers a composable control plane over existing Hadoop environments —
+          eliminating Kerberos, enabling one-click HDFS-to-Iceberg migration, and
+          delivering governed, AI-ready data products on Kubernetes. See how a
+          Top 5 US bank consolidated three legacy Hadoop platforms into one, cut
+          $130M+ in combined licensing and hardware costs, and had 30 AI
+          applications running in production within five weeks.</p>
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Bottom Center Button -->
+  <div class="text-center">
+    <button id="getEbookBtn" class="text-red-600 font-semibold hover:underline">
+      Download PDF
+    </button>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer" class="mt-12"></div>
+
+  <!-- JS -->
+  <script>
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('navbar').innerHTML = data);
+
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer').innerHTML = data);
+
+    document.addEventListener('click', function (e) {
+      if (e.target.id === 'getEbookBtn' || e.target.id === 'getEbookBtnBottom') {
+        window.open('report.html', '_blank');
+      }
+    });
+  </script>
+
+</body>
+
+</html>
